@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 public class ApiErrorException extends Exception {
 
-  protected MessageEnum messageApiEnum = MessageEnum.ERROR_DESCONHECIDO;
+  protected MessageEnum messageApiEnum = MessageEnum.UNKNOWN_ERROR;
   protected HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
   protected String errorMsg = null;
   protected String[] args = null;
