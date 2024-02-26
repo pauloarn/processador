@@ -42,7 +42,7 @@ public class LogFilter extends OncePerRequestFilter {
       long startTime = (long) request.getAttribute(REQUEST_TIME);
       long endTime = System.currentTimeMillis();
       long executeTime = endTime - startTime;
-      log.info(String.format("Requisição terminada com %d ms.", executeTime));
+      log.info(String.format("Request finished with %d ms.", executeTime));
     } catch (Exception ex) {
       log.error(ex.getMessage());
     }
@@ -56,7 +56,7 @@ public class LogFilter extends OncePerRequestFilter {
     LogUtils.adicionarCdTransacao(request.getHeader(CD_TRANSACAO));
     LogUtils.adicionarContextoMDC(LogContextEnum.API_CONTEXT, req);
 
-    log.info("Iniciando requisição");
+    log.info("Initializing Request");
   }
 
   private void printQueryParam(HttpServletRequest request) {

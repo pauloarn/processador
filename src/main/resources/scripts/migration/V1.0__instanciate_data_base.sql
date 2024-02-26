@@ -1,9 +1,12 @@
-CREATE TABLE processor.payment(
-    id  bigint NOT NULL primary key,
-    cpfCnpj varchar(14) not null,
+CREATE TABLE processor.payment
+(
+    id            SERIAL      NOT NULL primary key,
+    paymentCode   int,
+    paymentStatus varchar(50) not null,
+    cpfCnpj       varchar(14) not null,
     paymentMethod varchar(50) not null,
-    cardNumber varchar(150),
+    cardNumber    varchar(150),
     paymentAmount decimal,
-    createdAt timestamp not null,
-    updatedAt timestamp not null
+    createdAt     timestamp   not null,
+    updatedAt     timestamp   not null
 );
